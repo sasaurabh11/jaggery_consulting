@@ -26,16 +26,14 @@ const SideDrawer = () => {
 
   return (
     <div
-      role="dialog"
-      aria-modal="true"
-      className={`absolute bg-white shadow-xl transition-transform duration-300 right-0 top-0 h-full w-full sm:w-[480px] scroll-container`}
+      className="absolute bg-white shadow-xl transition-transform duration-300 right-0 top-0 h-full w-full sm:w-[480px] scroll-container z-[9999]"
     >
-      <div className="relative flex h-full flex-col px-4 pt-3 sm:px-[22px] sm:pt-5 md:px-7 md:pt-7 lg:px-8 lg:pt-9">
+      <div className="relative flex h-full flex-col px-8 pt-9">
         {/* Header */}
-        <div className="flex items-center justify-between pb-3 md:pb-4 lg:pb-4">
+        <div className="flex items-center justify-between pb-4">
           <a
             className="inline-block capitalize aspect-[124/48] w-[102px] md:w-[138px]"
-            href="/"
+            href="#"
           >
             <img
               alt="Image"

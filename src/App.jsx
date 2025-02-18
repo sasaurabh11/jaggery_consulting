@@ -1,6 +1,6 @@
 import React from 'react'
 import Navbar from './pages/Navbar'
-import LeftBar from './pages/LeftBar'
+import LeftBar from './pages/CategorySidebar'
 import Home from './pages/Home'
 
 const App = () => {

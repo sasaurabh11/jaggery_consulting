@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import Ride from "./Ride";
+import Ride from "./RideCard";
 import { LandRides, waterRides, kidsRides } from '../content/data';
 import { AppContext } from "../context/AppContext";
 
@@ -17,7 +17,7 @@ const Rides = () => {
   };
 
   return (
-    <div className="mx-auto flex max-w-fit gap-5 lg:ml-0">
+    <div className="mx-auto flex max-w-fit gap-5 lg:ml-0 rounded-lg">
       {getRides().map((ride, index) => (
         <Ride key={index} {...ride} />
       ))}

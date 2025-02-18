@@ -33,14 +33,28 @@ const ParkCategories = () => {
       }
     };
   
+    const getGradientStyle = () => {
+      if (selectedCategory === 'land') {
+        return {
+          background: "conic-gradient(from 0deg, rgb(232, 233, 241) -55deg, rgb(250, 213, 0) 15deg, rgb(250, 213, 0) 65deg, rgb(232, 233, 241) 135deg, rgb(232, 233, 241))"
+        };
+      } else if (selectedCategory === 'water') {
+        return {
+          background: "conic-gradient(from 0deg, rgb(232, 233, 241) -5deg, rgb(250, 213, 0) 65deg, rgb(250, 213, 0) 115deg, rgb(232, 233, 241) 185deg, rgb(232, 233, 241))"
+        };
+      } else { 
+        return {
+          background: "conic-gradient(from 0deg, rgb(232, 233, 241) 45deg, rgb(250, 213, 0) 115deg, rgb(250, 213, 0) 165deg, rgb(232, 233, 241) 235deg, rgb(232, 233, 241))"
+        };
+      }
+    };
+  
     return (
       <div className="relative h-[600px] w-[360px] overflow-visible rounded-lg top-32">
         {/* Background gradient circle */}
         <div 
-          className="absolute right-[92px] top-0 size-[600px] rounded-full"
-          style={{
-            background: "conic-gradient(from 0deg, rgb(232, 233, 241) -55deg, rgb(250, 213, 0) 15deg, rgb(250, 213, 0) 65deg, rgb(232, 233, 241) 135deg, rgb(232, 233, 241))"
-          }}
+          className="absolute right-[92px] top-0 size-[600px] rounded-full transition-all duration-500 ease-in-out"
+          style={getGradientStyle()}
         >
           <div className="absolute left-[90px] top-[90px] size-[420px] rounded-full bg-[#22304A]" />
         </div>

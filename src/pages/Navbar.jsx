@@ -29,11 +29,11 @@ const Navbar = () => {
   const {setDrawer} = useContext(AppContext)
 
   return (
-    <div className="flex items-center justify-between p-4 bg-white shadow-md w-[90%] h-[4.2rem] rounded-2xl fixed top-9 left-16">
+    <div className="flex items-center justify-between p-4 bg-white shadow-md w-[90%] h-[4.2rem] rounded-2xl fixed top-9 left-16 z-40">
       <a className="cursor-pointer transition-all duration-300 ease-in-out">
         <img
           src={logo}
-          alt="Logo"
+          alt=""
           className="h-[55px] w-[136px] transform hover:scale-105 hover:opacity-90"
         />
       </a>
@@ -54,7 +54,7 @@ const Navbar = () => {
 
           {/* Dropdown content */}
           {isOpen && (
-            <div className="absolute top-full left-0 w-96 bg-white shadow-lg rounded-md font-medium z-20">
+            <div className="absolute top-full left-0 w-96  bg-white shadow-lg rounded-md font-medium z-30">
               <ul
                 className="p-2"
                 onMouseEnter={() => setIsOpen(true)}
@@ -78,7 +78,7 @@ const Navbar = () => {
                     )}
 
                     {loc.hasSubmenu && submenuOpen === index && (
-                      <div className="absolute left-full top-0 w-48 bg-white shadow-lg rounded-md font-medium z-20">
+                      <div className="absolute left-full top-0 w-48 bg-white shadow-lg rounded-md font-medium z-40">
                         <ul className="p-2">
                           <li className="p-2 hover:bg-gray-200 cursor-pointer h-12 border-b border-gray-300 flex items-center space-x-2">
                             <img src={park} alt="" className="h-10 w-10 rounded-lg"/>
@@ -187,21 +187,21 @@ const Navbar = () => {
         </div>
       </div>
 
-      <div className="flex shrink-0 items-center gap-3 lg:gap-5">
+      <div className="flex items-center gap-5">
         <a
-          className="inline-block bg-[#fad600] rounded-lg"
+          className="bg-[#fad600] rounded-lg"
           href="#"
         >
-          <div className="capitalize text-blue bg-yellow flex h-[34px] items-center rounded-lg px-2.5 md:px-3.5">
-            <h6 className="font-mulish !leading-[1.255] flex items-center gap-1.5 text-[11px] font-black uppercase tracking-[-0.03em] md:text-xs text-[#334dcf]">
+          <div className="text-blue flex h-[34px] items-center rounded-lg px-3.5">
+            <h6 className="flex items-center gap-1.5 text-[11px] font-black uppercase  md:text-xs text-[#334dcf]">
               Book tickets{" "}
               <img src={chocalte} alt="" />
             </h6>
           </div>
         </a>
 
-        <button className="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-blue md:mx-2 lg:h-[17px] lg:w-[26px] lg:bg-transparent font-[#334dcf] " 
-          onClick={() => setDrawer(true)}
+        <button className="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full md:mx-2 lg:h-[17px] lg:w-[26px] lg:bg-transparent font-[#334dcf] " 
+                onClick={() => setDrawer(true)}
         >
           <img src={menu} alt="" />
         </button>
