@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useState } from 'react';
 import Land from '../assets/Land.svg'
 import water from '../assets/water.svg'
 import kids from '../assets/kids.svg'
+import { AppContext } from '../context/AppContext';
 
 const ParkCategories = () => {
     const [selectedCategory, setSelectedCategory] = useState('land');
-
+    const {ride, setRide} = useContext(AppContext);
+    
     const categories = {
       land: {
         position: { left: '51px', top: '17px' },
@@ -24,7 +26,7 @@ const ParkCategories = () => {
         rides: 9
       }
     };
-  
+    
     const handleKeyDown = (e, category) => {
       if (e.key === 'Enter') {
         setSelectedCategory(category);
@@ -52,7 +54,7 @@ const ParkCategories = () => {
         {/* Land Section */}
         <div 
           className="absolute cursor-pointer transition-all duration-500 right-[198px] top-[66px]"
-          onClick={() => setSelectedCategory('land')}
+          onClick={() => { setSelectedCategory('land'); setRide('land'); }}
           onKeyDown={(e) => handleKeyDown(e, 'land')}
           tabIndex={0}
           role="button"
@@ -72,7 +74,7 @@ const ParkCategories = () => {
         {/* Water Section */}
         <div 
           className="absolute cursor-pointer transition-all duration-500 right-[110px] top-1/2 -translate-y-1/2"
-          onClick={() => setSelectedCategory('water')}
+          onClick={() => { setSelectedCategory('water'); setRide('water'); }}
           onKeyDown={(e) => handleKeyDown(e, 'water')}
           tabIndex={0}
           role="button"
@@ -92,7 +94,7 @@ const ParkCategories = () => {
         {/* Kids Section */}
         <div 
           className="absolute cursor-pointer transition-all duration-500 bottom-[80px] right-[198px]"
-          onClick={() => setSelectedCategory('kids')}
+          onClick={() => { setSelectedCategory('kids'); setRide('kids'); }}
           onKeyDown={(e) => handleKeyDown(e, 'kids')}
           tabIndex={0}
           role="button"

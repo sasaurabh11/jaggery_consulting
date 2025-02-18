@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import logo from "../assets/logo.webp";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { IoIosArrowDown, IoIosArrowForward } from "react-icons/io";
@@ -14,6 +14,7 @@ import chocalte from "../assets/chocalate.svg"
 import menu from "../assets/menu.svg"
 import park from '../assets/bangalore-park.webp'
 import resort from '../assets/bangalore-resort.webp'
+import { AppContext } from "../context/AppContext";
 
 const locations = [
   { name: "KOCHI", image: KochiImage },
@@ -25,6 +26,7 @@ const locations = [
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [submenuOpen, setSubmenuOpen] = useState(null);
+  const {setDrawer} = useContext(AppContext)
 
   return (
     <div className="flex items-center justify-between p-4 bg-white shadow-md w-[90%] h-[4.2rem] rounded-2xl fixed top-9 left-16">
@@ -52,7 +54,7 @@ const Navbar = () => {
 
           {/* Dropdown content */}
           {isOpen && (
-            <div className="absolute top-full left-0 w-96 bg-white shadow-lg rounded-md font-medium z-10">
+            <div className="absolute top-full left-0 w-96 bg-white shadow-lg rounded-md font-medium z-20">
               <ul
                 className="p-2"
                 onMouseEnter={() => setIsOpen(true)}
@@ -198,9 +200,11 @@ const Navbar = () => {
           </div>
         </a>
 
-        <div className="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-blue md:mx-2 lg:h-[17px] lg:w-[26px] lg:bg-transparent font-[#334dcf] ">
+        <button className="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-blue md:mx-2 lg:h-[17px] lg:w-[26px] lg:bg-transparent font-[#334dcf] " 
+          onClick={() => setDrawer(true)}
+        >
           <img src={menu} alt="" />
-        </div>
+        </button>
       </div>
     </div>
   );
