@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState, useContext } from "react";
 import Rides from "./RidesSection";
 import left from "../assets/left.svg";
 import right from "../assets/right.svg";
-import SideDrawer from "./sideDrawer";
+import SideDrawer from "./SideDrawer";
 import { AppContext } from "../context/AppContext";
 
 const Home = () => {
