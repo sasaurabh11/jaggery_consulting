@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import logo from "../assets/logo.webp";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { IoIosArrowDown, IoIosArrowForward } from "react-icons/io";
-import KochiImage from "../assets/kochi.webp";
+import KochiImage from "../assets/Kochi.webp";
 import BengaluruImage from "../assets/Banglore.webp";
 import HyderabadImage from "../assets/Hyderabad.webp";
 import BhubaneswarImage from "../assets/Bhubaneswar.webp";

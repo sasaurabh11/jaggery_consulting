@@ -3,7 +3,7 @@ import cross from "../assets/cross.svg";
 import Banglore from "../assets/Banglore.webp";
 import parks from "../assets/parks.webp";
 import dropDown from "../assets/drop.svg";
-import kochi from "../assets/kochi.webp";
+import kochi from "../assets/Kochi.webp";
 import hyderabad from "../assets/Hyderabad.webp";
 import bhubaneswar from "../assets/Bhubaneswar.webp";
 import resorts from "../assets/resorts.webp";
